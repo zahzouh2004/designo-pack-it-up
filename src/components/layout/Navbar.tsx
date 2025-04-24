@@ -29,9 +29,6 @@ const Navbar = () => {
             <Link to="/services" className="font-medium hover:text-designo-brown transition-colors">
               خدماتنا
             </Link>
-            <Link to="/portfolio" className="font-medium hover:text-designo-brown transition-colors">
-              معرض الأعمال
-            </Link>
             <Link to="/about" className="font-medium hover:text-designo-brown transition-colors">
               عن الشركة
             </Link>
@@ -74,13 +71,6 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 خدماتنا
-              </Link>
-              <Link 
-                to="/portfolio" 
-                className="px-4 py-2 text-center hover:bg-designo-gray-light rounded-md"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                معرض الأعمال
               </Link>
               <Link 
                 to="/about" 

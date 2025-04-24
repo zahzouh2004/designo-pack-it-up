@@ -1,11 +1,16 @@
-
 import React, { useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Select } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from '@/hooks/use-toast';
 import { CheckCircle, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -22,7 +27,15 @@ const Contact = () => {
     dimensions: '',
     printing: false,
     design: false,
-    message: ''
+    message: '',
+    thickness: 'standard',
+    finish: 'matte',
+    plasticType: 'pet',
+    transparency: 'transparent',
+    protectionType: 'shock',
+    productType: '',
+    foodType: 'dry',
+    certifications: 'none'
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -52,34 +65,41 @@ const Contact = () => {
     }, 1000);
   };
 
-  // Additional fields based on package type
   const renderAdditionalFields = () => {
     switch (formData.packageType) {
       case 'cardboard':
         return (
           <div className="space-y-4">
             <div>
-              <Label htmlFor="thickness">سماكة الكرتون</Label>
+              <Label>سماكة الكرتون</Label>
               <Select 
-                name="thickness" 
-                id="thickness"
-                onChange={handleChange}
+                value={formData.thickness}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, thickness: value }))}
               >
-                <option value="standard">عادي</option>
-                <option value="medium">متوسط</option>
-                <option value="heavy">سميك</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر سماكة الكرتون" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="standard">عادي</SelectItem>
+                  <SelectItem value="medium">متوسط</SelectItem>
+                  <SelectItem value="heavy">سميك</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div>
-              <Label htmlFor="finish">نوع التشطيب</Label>
+              <Label>نوع التشطيب</Label>
               <Select 
-                name="finish" 
-                id="finish"
-                onChange={handleChange}
+                value={formData.finish}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, finish: value }))}
               >
-                <option value="matte">مطفي</option>
-                <option value="glossy">لامع</option>
-                <option value="textured">محبب</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر نوع التشطيب" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="matte">مطفي</SelectItem>
+                  <SelectItem value="glossy">لامع</SelectItem>
+                  <SelectItem value="textured">محبب</SelectItem>
+                </SelectContent>
               </Select>
             </div>
           </div>
@@ -89,27 +109,35 @@ const Contact = () => {
         return (
           <div className="space-y-4">
             <div>
-              <Label htmlFor="plasticType">نوع البلاستيك</Label>
+              <Label>نوع البلاستيك</Label>
               <Select 
-                name="plasticType" 
-                id="plasticType"
-                onChange={handleChange}
+                value={formData.plasticType}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, plasticType: value }))}
               >
-                <option value="pet">PET</option>
-                <option value="pp">PP</option>
-                <option value="pvc">PVC</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر نوع البلاستيك" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="pet">PET</SelectItem>
+                  <SelectItem value="pp">PP</SelectItem>
+                  <SelectItem value="pvc">PVC</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div>
-              <Label htmlFor="transparency">الشفافية</Label>
+              <Label>الشفافية</Label>
               <Select 
-                name="transparency" 
-                id="transparency"
-                onChange={handleChange}
+                value={formData.transparency}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, transparency: value }))}
               >
-                <option value="transparent">شفاف</option>
-                <option value="semitransparent">نصف شفاف</option>
-                <option value="opaque">معتم</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر مستوى الشفافية" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="transparent">شفاف</SelectItem>
+                  <SelectItem value="semitransparent">نصف شفاف</SelectItem>
+                  <SelectItem value="opaque">معتم</SelectItem>
+                </SelectContent>
               </Select>
             </div>
           </div>
@@ -119,26 +147,28 @@ const Contact = () => {
         return (
           <div className="space-y-4">
             <div>
-              <Label htmlFor="protectionType">نوع الحماية المطلوبة</Label>
+              <Label>نوع الحماية المطلوبة</Label>
               <Select 
-                name="protectionType" 
-                id="protectionType"
-                onChange={handleChange}
+                value={formData.protectionType}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, protectionType: value }))}
               >
-                <option value="shock">صدمات</option>
-                <option value="water">رطوبة</option>
-                <option value="heat">حرارة</option>
-                <option value="multiple">حماية متعددة</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر نوع الحماية" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="shock">صدمات</SelectItem>
+                  <SelectItem value="water">رطوبة</SelectItem>
+                  <SelectItem value="heat">حرارة</SelectItem>
+                  <SelectItem value="multiple">حماية متعددة</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div>
-              <Label htmlFor="productType">نوع المنتج المراد حمايته</Label>
+              <Label>نوع المنتج المراد حمايته</Label>
               <Input 
-                type="text" 
-                id="productType" 
-                name="productType" 
+                value={formData.productType}
+                onChange={(e) => setFormData(prev => ({ ...prev, productType: e.target.value }))}
                 placeholder="مثال: إلكترونيات، زجاج، إلخ"
-                onChange={handleChange} 
               />
             </div>
           </div>
@@ -148,29 +178,37 @@ const Contact = () => {
         return (
           <div className="space-y-4">
             <div>
-              <Label htmlFor="foodType">نوع الطعام</Label>
+              <Label>نوع الطعام</Label>
               <Select 
-                name="foodType" 
-                id="foodType"
-                onChange={handleChange}
+                value={formData.foodType}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, foodType: value }))}
               >
-                <option value="dry">جاف</option>
-                <option value="fresh">طازج</option>
-                <option value="liquid">سائل</option>
-                <option value="frozen">مجمد</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر نوع الطعام" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="dry">جاف</SelectItem>
+                  <SelectItem value="fresh">طازج</SelectItem>
+                  <SelectItem value="liquid">سائل</SelectItem>
+                  <SelectItem value="frozen">مجمد</SelectItem>
+                </SelectContent>
               </Select>
             </div>
             <div>
-              <Label htmlFor="certifications">شهادات الجودة المطلوبة</Label>
+              <Label>شهادات الجودة المطلوبة</Label>
               <Select 
-                name="certifications" 
-                id="certifications"
-                onChange={handleChange}
+                value={formData.certifications}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, certifications: value }))}
               >
-                <option value="none">لا يوجد</option>
-                <option value="iso">ISO</option>
-                <option value="haccp">HACCP</option>
-                <option value="halal">حلال</option>
+                <SelectTrigger>
+                  <SelectValue placeholder="اختر شهادات الجودة" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="none">لا يوجد</SelectItem>
+                  <SelectItem value="iso">ISO</SelectItem>
+                  <SelectItem value="haccp">HACCP</SelectItem>
+                  <SelectItem value="halal">حلال</SelectItem>
+                </SelectContent>
               </Select>
             </div>
           </div>
@@ -212,7 +250,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">العنوان</h3>
-                      <p className="text-gray-600">الرياض، المملكة العربية السعودية</p>
+                      <p className="text-gray-600">الجزائر العاصمة، الجزائر</p>
                     </div>
                   </div>
                   
@@ -222,7 +260,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">الهاتف</h3>
-                      <p className="text-gray-600">+966 50 000 0000</p>
+                      <p className="text-gray-600">+213 555 123 456</p>
                     </div>
                   </div>
                   
@@ -232,7 +270,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg">البريد الإلكتروني</h3>
-                      <p className="text-gray-600">info@designo.com</p>
+                      <p className="text-gray-600">contact@designo-dz.com</p>
                     </div>
                   </div>
                 </div>
@@ -346,18 +384,20 @@ const Contact = () => {
                       
                       <div className="space-y-4">
                         <div>
-                          <Label htmlFor="packageType">نوع التغليف المطلوب *</Label>
+                          <Label>نوع التغليف المطلوب *</Label>
                           <Select 
-                            name="packageType" 
-                            id="packageType" 
                             value={formData.packageType}
-                            onChange={handleChange} 
-                            required
+                            onValueChange={(value) => setFormData(prev => ({ ...prev, packageType: value }))}
                           >
-                            <option value="cardboard">علب كرتونية</option>
-                            <option value="plastic">علب بلاستيكية وورقية</option>
-                            <option value="protective">تغليف واقي</option>
-                            <option value="food">تغليف منتجات غذائية</option>
+                            <SelectTrigger>
+                              <SelectValue placeholder="اختر نوع التغليف" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="cardboard">علب كرتونية</SelectItem>
+                              <SelectItem value="plastic">علب بلاستيكية وورقية</SelectItem>
+                              <SelectItem value="protective">تغليف واقي</SelectItem>
+                              <SelectItem value="food">تغليف منتجات غذائية</SelectItem>
+                            </SelectContent>
                           </Select>
                         </div>
                         
@@ -443,12 +483,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section - Placeholder */}
+      {/* Map Section */}
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-            {/* This would be replaced with an actual map in a real project */}
-            <p className="text-gray-500">هنا يتم إضافة خريطة تفاعلية لموقع الشركة</p>
+            <p className="text-gray-500">سيتم إضافة خريطة تفاعلية لموقع الشركة</p>
           </div>
         </div>
       </section>
