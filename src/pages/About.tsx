@@ -21,7 +21,7 @@ const About = () => {
     {
       name: "عايدة",
       role: "مديرة المشاريع",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
       name: "لينا بو",

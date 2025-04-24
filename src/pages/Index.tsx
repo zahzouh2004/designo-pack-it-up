@@ -74,7 +74,7 @@ const Index = () => {
                 حلول تغليف مبتكرة لمنتجاتك
               </h1>
               <p className="text-lg md:text-xl mb-8 text-gray-700">
-                متخصصون في تصميم وتصنيع التغليف المخصص الذي يحمي منتجاتك ويعزز هويتك التجارية
+                جزائريون متخصصون في تصميم وتصنيع التغليف المخصص الذي يحمي منتجاتك ويعزز هويتك التجارية
               </p>
               <div className="flex flex-wrap gap-4 justify-end">
                 <Button asChild className="bg-designo-brown hover:bg-designo-brown-dark text-white">
@@ -87,8 +87,8 @@ const Index = () => {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1605870445919-838d190e8e1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                alt="تصميم علب التغليف" 
+                src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="فريق ديزاينو في العمل" 
                 className="rounded-lg shadow-xl animate-fade-in"
               />
             </div>
