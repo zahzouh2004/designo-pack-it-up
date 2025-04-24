@@ -9,24 +9,24 @@ const About = () => {
   // Team data
   const teamMembers = [
     {
-      name: "أحمد محمد",
+      name: "شتيوي عبدو",
       role: "المدير التنفيذي",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "سارة علي",
-      role: "مدير الإنتاج",
+      name: "علياء حلاوة",
+      role: "مديرة التصميم",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "خالد عبدالله",
-      role: "مصمم رئيسي",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      name: "عايدة",
+      role: "مديرة المشاريع",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "نورة سعيد",
-      role: "مسؤول خدمة العملاء",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      name: "لينا بو",
+      role: "مديرة خدمة العملاء",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     }
   ];
 
@@ -39,10 +39,10 @@ const About = () => {
             <div className="lg:w-1/2">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">من نحن</h1>
               <p className="text-lg mb-6">
-                نحن شركة رائدة متخصصة في تصميم وإنتاج حلول التغليف المبتكرة والمخصصة لمختلف القطاعات والصناعات. بدأنا رحلتنا منذ أكثر من 10 سنوات بهدف تقديم منتجات تغليف عالية الجودة تلبي احتياجات عملائنا وتتجاوز توقعاتهم.
+                نحن شركة جزائرية رائدة متخصصة في تصميم وإنتاج حلول التغليف المبتكرة والمخصصة لمختلف القطاعات والصناعات. نفخر بتقديم منتجات عالية الجودة تلبي احتياجات عملائنا في السوق الجزائري.
               </p>
               <p className="text-lg">
-                في ديزاينو، نؤمن بأن التغليف ليس مجرد وسيلة لحماية المنتج، بل هو جزء أساسي من تجربة العملاء وهوية العلامة التجارية. لذلك نحرص على تصميم حلول تغليف تجمع بين الوظائف العملية والجمالية.
+                في ديزاينو، نؤمن بأن التغليف ليس مجرد وسيلة لحماية المنتج، بل هو جزء أساسي من تجربة العملاء وهوية العلامة التجارية.
               </p>
             </div>
             <div className="lg:w-1/2">
@@ -153,7 +153,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-designo-brown-dark mb-4">فريقنا</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              يضم فريقنا نخبة من المتخصصين والمصممين ذوي الخبرة في مجال تصميم وإنتاج التغليف
+              يضم فريقنا نخبة من المتخصصين والمصممين المبدعين في مجال تصميم وإنتاج التغليف في الجزائر
             </p>
           </div>
 

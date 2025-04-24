@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -15,7 +14,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">designo</span>
             </Link>
             <p className="text-sm text-gray-300 mb-6">
-              متخصصون في تصميم علب التغليف وحلول الحماية حسب الطلب لمختلف القطاعات
+              متخصصون في تصميم علب التغليف وحلول الحماية حسب الطلب لمختلف القطاعات في الجزائر
             </p>
             <div className="flex space-x-4 rtl:space-x-reverse">
               <a href="#" className="text-white hover:text-designo-brown-light">
@@ -47,9 +46,6 @@ const Footer = () => {
                 <Link to="/services" className="hover:text-designo-brown-light transition-colors">خدماتنا</Link>
               </li>
               <li>
-                <Link to="/portfolio" className="hover:text-designo-brown-light transition-colors">معرض الأعمال</Link>
-              </li>
-              <li>
                 <Link to="/about" className="hover:text-designo-brown-light transition-colors">عن الشركة</Link>
               </li>
               <li>
@@ -64,15 +60,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3 rtl:space-x-reverse">
                 <MapPin className="h-5 w-5 text-designo-brown-light flex-shrink-0" />
-                <span>الرياض، المملكة العربية السعودية</span>
+                <span>الجزائر العاصمة، الجزائر</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Phone className="h-5 w-5 text-designo-brown-light flex-shrink-0" />
-                <a href="tel:+966500000000" className="hover:text-designo-brown-light transition-colors">+966 50 000 0000</a>
+                <a href="tel:+213500000000" className="hover:text-designo-brown-light transition-colors">+213 50 000 0000</a>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Mail className="h-5 w-5 text-designo-brown-light flex-shrink-0" />
-                <a href="mailto:info@designo.com" className="hover:text-designo-brown-light transition-colors">info@designo.com</a>
+                <a href="mailto:info@designo.dz" className="hover:text-designo-brown-light transition-colors">info@designo.dz</a>
               </div>
             </div>
           </div>
