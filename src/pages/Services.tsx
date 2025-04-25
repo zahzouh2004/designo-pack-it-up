@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import { Package, Box, ShoppingBag, Settings } from 'lucide-react';
@@ -6,6 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
+  // Adding error handling for images
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error("Image failed to load");
+    e.currentTarget.src = "https://via.placeholder.com/800x600?text=صورة+الخدمة";
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -24,9 +29,10 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1607435384312-85c7dacc8b80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/e049ae9d-96d8-4df9-9d69-6db71121797a.png" 
                 alt="علب كرتونية" 
                 className="rounded-lg shadow-lg"
+                onError={handleImageError}
               />
             </div>
             <div className="lg:w-1/2">
@@ -73,9 +79,10 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/ffe419ab-7b64-444e-a1a2-81b3b042b4a3.png" 
                 alt="علب بلاستيكية وورقية" 
                 className="rounded-lg shadow-lg"
+                onError={handleImageError}
               />
             </div>
             <div className="lg:w-1/2">
@@ -122,9 +129,10 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/910a184c-04a5-4b05-80a3-324c8594956b.png" 
                 alt="تغليف واقي" 
                 className="rounded-lg shadow-lg"
+                onError={handleImageError}
               />
             </div>
             <div className="lg:w-1/2">
@@ -171,9 +179,10 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1622667052565-c8fafd33ecf0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/206c1188-cc2e-4722-83db-cf9beec42343.png" 
                 alt="تغليف المنتجات الغذائية" 
                 className="rounded-lg shadow-lg"
+                onError={handleImageError}
               />
             </div>
             <div className="lg:w-1/2">

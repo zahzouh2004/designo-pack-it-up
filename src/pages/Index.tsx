@@ -6,7 +6,7 @@ import Layout from '@/components/layout/Layout';
 import { Package, Box, Image, Settings } from 'lucide-react';
 
 const Index = () => {
-  // Sample services data with updated images
+  // Sample services data with updated images - making sure they display correctly
   const services = [
     {
       id: 1,
@@ -80,15 +80,19 @@ const Index = () => {
                   <Link to="/contact">طلب تصميم الآن</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-designo-brown text-designo-brown-dark hover:bg-designo-brown-light/20">
-                  <Link to="/services">استكشف خدماتنا</Link>
+                  <a href="#services">استكشف خدماتنا</a>
                 </Button>
               </div>
             </div>
             <div className="md:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/90397345-970a-40e6-a290-1700b7cac0af.png" 
                 alt="فريق ديزاينو في العمل" 
                 className="rounded-lg shadow-xl animate-fade-in"
+                onError={(e) => {
+                  console.error("Image failed to load");
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80";
+                }}
               />
             </div>
           </div>
@@ -96,7 +100,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section id="services" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-designo-brown-dark mb-4">خدماتنا</h2>
@@ -113,6 +117,11 @@ const Index = () => {
                     src={service.imageSrc} 
                     alt={service.title}
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${service.imageSrc}`);
+                      // Set a fallback image in case the original fails to load
+                      e.currentTarget.src = "https://via.placeholder.com/800x600?text=صورة+الخدمة";
+                    }}
                   />
                 </div>
                 <div className="p-6">
