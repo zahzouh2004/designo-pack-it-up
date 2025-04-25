@@ -2,7 +2,7 @@
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your user ID
-emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID || "YOUR_USER_ID"); 
+emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID || "YOUR_USER_ID"); 
 
 export const sendEmail = async (formData: any) => {
   try {
@@ -15,8 +15,8 @@ export const sendEmail = async (formData: any) => {
     }
     
     const response = await emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
       {
         name: formData.name,
         email: formData.email,
