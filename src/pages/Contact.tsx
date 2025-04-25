@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from '@/hooks/use-toast';
 import { CheckCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { sendEmail } from '@/utils/emailService';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -50,19 +51,22 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted with data:', formData);
-    
-    // In a real app, you would send this data to your backend
-    // For now, let's simulate a successful submission
-    setTimeout(() => {
+    try {
+      await sendEmail(formData);
       toast({
         title: "تم إرسال طلبك بنجاح",
         description: "سنتواصل معك قريبًا لمناقشة التفاصيل",
       });
       setSubmitted(true);
-    }, 1000);
+    } catch (error) {
+      toast({
+        title: "حدث خطأ",
+        description: "يرجى المحاولة مرة أخرى لاحقًا",
+        variant: "destructive",
+      });
+    }
   };
 
   const renderAdditionalFields = () => {

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,28 +12,28 @@ const Index = () => {
       id: 1,
       title: 'علب كرتونية',
       description: 'تصميم وإنتاج علب كرتونية مخصصة للشحن والتخزين والعرض بمختلف الأحجام والمقاسات',
-      imageSrc: '/lovable-uploads/73aa070a-31b1-4338-9fb6-e3147660c6a8.png',
+      imageSrc: '/lovable-uploads/e049ae9d-96d8-4df9-9d69-6db71121797a.png',
       link: '#cardboard'
     },
     {
       id: 2,
       title: 'علب بلاستيكية وورقية',
       description: 'علب بلاستيكية وورقية مبتكرة تلبي احتياجات التغليف للمنتجات المختلفة',
-      imageSrc: 'https://images.unsplash.com/photo-1585338927000-1c787b17eb5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      imageSrc: '/lovable-uploads/ffe419ab-7b64-444e-a1a2-81b3b042b4a3.png',
       link: '#plastic'
     },
     {
       id: 3,
       title: 'تغليف واقي',
       description: 'حلول تغليف متخصصة تحمي المنتجات من الرطوبة والحرارة والصدمات',
-      imageSrc: 'https://images.unsplash.com/photo-1541560584704-5723dde9dc9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      imageSrc: '/lovable-uploads/910a184c-04a5-4b05-80a3-324c8594956b.png',
       link: '#protective'
     },
     {
       id: 4,
       title: 'تغليف المنتجات الغذائية',
       description: 'حلول تغليف آمنة وصحية مناسبة للأطعمة والمشروبات بمختلف أنواعها',
-      imageSrc: 'https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      imageSrc: '/lovable-uploads/206c1188-cc2e-4722-83db-cf9beec42343.png',
       link: '#food'
     }
   ];
@@ -105,7 +106,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="h-64 overflow-hidden">
                   <img 
