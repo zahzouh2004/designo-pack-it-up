@@ -1,41 +1,39 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import ServiceCard from '@/components/services/ServiceCard';
 import Layout from '@/components/layout/Layout';
 import { Package, Box, Image, Settings } from 'lucide-react';
 
 const Index = () => {
-  // Sample services data
+  // Sample services data with updated images
   const services = [
     {
       id: 1,
       title: 'علب كرتونية',
       description: 'تصميم وإنتاج علب كرتونية مخصصة للشحن والتخزين والعرض بمختلف الأحجام والمقاسات',
-      imageSrc: 'https://images.unsplash.com/photo-1607435384312-85c7dacc8b80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-      link: '/services#cardboard'
+      imageSrc: '/lovable-uploads/73aa070a-31b1-4338-9fb6-e3147660c6a8.png',
+      link: '#cardboard'
     },
     {
       id: 2,
       title: 'علب بلاستيكية وورقية',
       description: 'علب بلاستيكية وورقية مبتكرة تلبي احتياجات التغليف للمنتجات المختلفة',
-      imageSrc: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-      link: '/services#plastic'
+      imageSrc: 'https://images.unsplash.com/photo-1585338927000-1c787b17eb5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      link: '#plastic'
     },
     {
       id: 3,
       title: 'تغليف واقي',
       description: 'حلول تغليف متخصصة تحمي المنتجات من الرطوبة والحرارة والصدمات',
-      imageSrc: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-      link: '/services#protective'
+      imageSrc: 'https://images.unsplash.com/photo-1541560584704-5723dde9dc9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      link: '#protective'
     },
     {
       id: 4,
       title: 'تغليف المنتجات الغذائية',
       description: 'حلول تغليف آمنة وصحية مناسبة للأطعمة والمشروبات بمختلف أنواعها',
-      imageSrc: 'https://images.unsplash.com/photo-1622667052565-c8fafd33ecf0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-      link: '/services#food'
+      imageSrc: 'https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+      link: '#food'
     }
   ];
 
@@ -106,23 +104,25 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <ServiceCard 
-                key={service.id}
-                title={service.title}
-                description={service.description}
-                imageSrc={service.imageSrc}
-                link={service.link}
-                index={index}
-              />
+              <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={service.imageSrc} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 text-designo-brown-dark">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <Button asChild variant="link" className="text-designo-brown hover:text-designo-brown-dark">
+                    <a href={service.link}>المزيد من المعلومات →</a>
+                  </Button>
+                </div>
+              </div>
             ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Button asChild className="bg-designo-brown hover:bg-designo-brown-dark text-white">
-              <Link to="/services">عرض جميع الخدمات</Link>
-            </Button>
           </div>
         </div>
       </section>
