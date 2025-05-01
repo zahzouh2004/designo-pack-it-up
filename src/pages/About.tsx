@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import { CheckCircle } from 'lucide-react';
@@ -31,7 +30,7 @@ const About = () => {
     {
       name: "رمضان بشرى",
       role: "مديرة التسويق",
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     }
   ];
 
