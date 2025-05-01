@@ -9,24 +9,29 @@ const About = () => {
   // Team data
   const teamMembers = [
     {
-      name: "شتيوي عبدو",
+      name: "شتيوي يونس",
       role: "المدير التنفيذي",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "علياء حلاوة",
+      name: "حلاوة الاء",
       role: "مديرة التصميم",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "عايدة",
+      name: "حمان عيدة",
       role: "مديرة المشاريع",
       image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     },
     {
-      name: "لينا بو",
+      name: "بوناصر لينة",
       role: "مديرة خدمة العملاء",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      name: "رمضان بشرى",
+      role: "مديرة التسويق",
+      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     }
   ];
 
@@ -157,7 +162,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="mb-4 relative mx-auto w-40 h-40 overflow-hidden rounded-full">
