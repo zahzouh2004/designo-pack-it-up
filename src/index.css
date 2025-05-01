@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 33 35% 48%;
+    --primary: 25 53% 44%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 33 35% 48%;
+    --ring: 25 53% 44%;
 
     --radius: 0.5rem;
   }
@@ -48,7 +48,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 33 35% 48%;
+    --primary: 25 53% 44%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -65,7 +65,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 33 35% 48%;
+    --ring: 25 53% 44%;
   }
 }
 
@@ -98,5 +98,25 @@
 
   .section-padding {
     @apply py-12 md:py-20;
+  }
+
+  .gradient-bg-gold {
+    @apply bg-gradient-to-br from-designo-gold-light to-designo-gold;
+  }
+
+  .gradient-bg-green {
+    @apply bg-gradient-to-br from-designo-green-light to-designo-green;
+  }
+
+  .gradient-bg-blue {
+    @apply bg-gradient-to-br from-designo-blue-light to-designo-blue;
+  }
+
+  .gradient-bg-teal {
+    @apply bg-gradient-to-br from-designo-teal-light to-designo-teal;
+  }
+
+  .gradient-bg-brown {
+    @apply bg-gradient-to-br from-designo-brown-light to-designo-brown;
   }
 }

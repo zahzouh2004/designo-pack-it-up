@@ -16,37 +16,37 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <nav className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-designo-brown-dark">
+            <span className="text-2xl font-bold bg-gradient-to-r from-designo-brown to-designo-gold-dark bg-clip-text text-transparent">
               designo
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="font-medium hover:text-designo-brown transition-colors">
+            <Link to="/" className="font-medium text-designo-gray-dark hover:text-designo-brown transition-colors">
               الرئيسية
             </Link>
-            <Link to="/services" className="font-medium hover:text-designo-brown transition-colors">
+            <Link to="/services" className="font-medium text-designo-gray-dark hover:text-designo-brown transition-colors">
               خدماتنا
             </Link>
-            <Link to="/about" className="font-medium hover:text-designo-brown transition-colors">
+            <Link to="/about" className="font-medium text-designo-gray-dark hover:text-designo-brown transition-colors">
               عن الشركة
             </Link>
-            <Link to="/contact" className="font-medium hover:text-designo-brown transition-colors">
+            <Link to="/contact" className="font-medium text-designo-gray-dark hover:text-designo-brown transition-colors">
               اتصل بنا
             </Link>
           </div>
 
           {/* Contact Button - Desktop */}
           <div className="hidden md:block">
-            <Button asChild className="bg-designo-brown hover:bg-designo-brown-dark text-white">
+            <Button asChild className="bg-gradient-to-r from-designo-brown to-designo-gold hover:from-designo-brown-dark hover:to-designo-gold-dark text-white">
               <Link to="/contact">طلب تصميم</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-600 hover:text-designo-brown"
+            className="md:hidden text-designo-gray-dark hover:text-designo-brown"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -86,7 +86,7 @@ const Navbar = () => {
               >
                 اتصل بنا
               </Link>
-              <Button asChild className="bg-designo-brown hover:bg-designo-brown-dark text-white w-full">
+              <Button asChild className="bg-gradient-to-r from-designo-brown to-designo-gold hover:from-designo-brown-dark hover:to-designo-gold-dark text-white w-full">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>طلب تصميم</Link>
               </Button>
             </div>

@@ -41,7 +41,7 @@ const Index = () => {
   // Features data
   const features = [
     {
-      icon: <Package className="h-12 w-12 text-designo-blue" />,
+      icon: <Package className="h-12 w-12 text-designo-teal" />,
       title: 'تصميم مخصص',
       description: 'نصمم علب التغليف وفقًا لمتطلباتك الخاصة بما يتناسب مع هوية علامتك التجارية'
     },
@@ -56,7 +56,7 @@ const Index = () => {
       description: 'خدمات طباعة متميزة للشعارات والمعلومات على التغليف بدقة عالية'
     },
     {
-      icon: <Settings className="h-12 w-12 text-designo-blue-dark" />,
+      icon: <Settings className="h-12 w-12 text-designo-blue" />,
       title: 'استشارات متخصصة',
       description: 'خبراؤنا جاهزون لمساعدتك في اختيار أنسب حلول التغليف لمنتجاتك'
     }
@@ -65,18 +65,18 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-designo-brown-light to-designo-gray-light text-designo-brown-dark">
+      <section className="bg-gradient-to-r from-designo-gold-light to-designo-brown-light text-designo-brown-dark">
         <div className="container mx-auto px-4 py-20 md:py-32">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0 text-right">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-br from-designo-brown-dark to-designo-gold-dark bg-clip-text text-transparent">
                 حلول تغليف مبتكرة لمنتجاتك
               </h1>
               <p className="text-lg md:text-xl mb-8 text-gray-700">
                 جزائريون متخصصون في تصميم وتصنيع التغليف المخصص الذي يحمي منتجاتك ويعزز هويتك التجارية
               </p>
               <div className="flex flex-wrap gap-4 justify-end">
-                <Button asChild className="bg-designo-brown hover:bg-designo-brown-dark text-white">
+                <Button asChild className="bg-gradient-to-r from-designo-brown to-designo-gold-dark hover:from-designo-brown-dark hover:to-designo-gold text-white">
                   <Link to="/contact">طلب تصميم الآن</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-designo-brown text-designo-brown-dark hover:bg-designo-brown-light/20">
@@ -103,7 +103,7 @@ const Index = () => {
       <section id="services" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-designo-brown-dark mb-4">خدماتنا</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-designo-brown to-designo-gold-dark bg-clip-text text-transparent mb-4">خدماتنا</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               نقدم مجموعة متنوعة من حلول التغليف المخصصة لتلبية احتياجات مختلف القطاعات والمؤسسات
             </p>
@@ -111,7 +111,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src={service.imageSrc} 
@@ -119,15 +119,14 @@ const Index = () => {
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       console.error(`Failed to load image: ${service.imageSrc}`);
-                      // Set a fallback image in case the original fails to load
                       e.currentTarget.src = "https://via.placeholder.com/800x600?text=صورة+الخدمة";
                     }}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-designo-brown-dark">{service.title}</h3>
+                <div className="p-6 bg-gradient-to-br from-white to-designo-gray-light/30">
+                  <h3 className="text-2xl font-bold mb-3 text-designo-brown">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <Button asChild variant="link" className="text-designo-brown hover:text-designo-brown-dark">
+                  <Button asChild variant="link" className="text-designo-gold-dark hover:text-designo-gold">
                     <a href={service.link}>المزيد من المعلومات →</a>
                   </Button>
                 </div>
@@ -138,10 +137,10 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-designo-gray-light">
+      <section className="py-16 bg-gradient-to-br from-designo-gray-light to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-designo-brown-dark mb-4">لماذا تختارنا؟</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-designo-brown to-designo-gold-dark bg-clip-text text-transparent mb-4">لماذا تختارنا؟</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               نتميز بخبرة طويلة في مجال تصميم وإنتاج حلول التغليف المبتكرة التي تلبي احتياجات عملائنا
             </p>
@@ -149,11 +148,11 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-all duration-300 border border-gray-50">
                 <div className="flex justify-center mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-designo-brown-dark">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-designo-gray-dark">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -162,7 +161,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-designo-brown text-white">
+      <section className="py-16 bg-gradient-to-r from-designo-brown to-designo-gold text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">هل أنت مستعد لبدء مشروعك؟</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">

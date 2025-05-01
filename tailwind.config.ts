@@ -53,27 +53,37 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors for designo
+				// Custom colors for designo - updated with more attractive palette
 				designo: {
 					brown: {
-						light: '#E2D1C3',
-						DEFAULT: '#A67C52',
-						dark: '#70512E'
+						light: '#E9D8C4',
+						DEFAULT: '#9A6B48',
+						dark: '#5D3F23'
 					},
 					gray: {
-						light: '#F5F5F5',
-						DEFAULT: '#8E9196',
-						dark: '#333333'
+						light: '#F8F7F5',
+						DEFAULT: '#7A7E85',
+						dark: '#2D2D30'
 					},
 					green: {
-						light: '#F2FCE2',
-						DEFAULT: '#4CAF50',
-						dark: '#2E7D32'
+						light: '#E8F5E9',
+						DEFAULT: '#5CB85C',
+						dark: '#3E8E41'
 					},
 					blue: {
-						light: '#D3E4FD',
-						DEFAULT: '#1EAEDB',
-						dark: '#0D47A1'
+						light: '#E1F5FE',
+						DEFAULT: '#29B6F6',
+						dark: '#0277BD'
+					},
+					gold: {
+						light: '#FFF8E1',
+						DEFAULT: '#FFC107',
+						dark: '#FF8F00'
+					},
+					teal: {
+						light: '#E0F2F1',
+						DEFAULT: '#26A69A',
+						dark: '#00796B'
 					}
 				}
 			},
