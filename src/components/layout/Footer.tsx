@@ -81,6 +81,7 @@ const Footer = () => {
         
         <div className="pt-8 mt-8 border-t border-white/20 text-center text-sm text-white/80">
           <p>© {new Date().getFullYear()} designo. جميع الحقوق محفوظة.</p>
+          <p className="mt-2 text-amber-200">تم تطوير هذا الموقع بواسطة <a href="mailto:zahzouhmohamed2004@gmail.com" className="underline hover:text-white">zahzouhmohamed2004@gmail.com</a></p>
         </div>
       </div>
     </footer>
